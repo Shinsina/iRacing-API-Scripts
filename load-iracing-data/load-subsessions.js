@@ -33,7 +33,7 @@ if (!uri) {
         }
       }));
       await subsessionsCol.bulkWrite(bulkOps);
-      console.log("Standings Data Bulk Write Complete!")
+      console.log("Subsessions Data Bulk Write Complete!")
     } finally {
       await client.close();
     }
