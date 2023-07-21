@@ -1,5 +1,5 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const data = require("./jake-data.json");
+const data = require("./7-21-2023-jake-user-input.json");
 require("dotenv").config()
 
 const uri = process.env.MONGODB_URI || null;
@@ -17,23 +17,23 @@ if (!uri) {
   async function run() {
     try {
       await client.connect();
-      const subsessionsCol = await client.db("main").collection("subsessions");
-      const bulkOps = Object.keys(data).map((subsessionId) => ({
+      const seasonsCol = await client.db("main").collection("users");
+      const bulkOps = data.map((item) => ({
         updateOne: {
-          filter: { _id: Number(subsessionId) },
+          filter: { _id: Number(item.cust_id) },
           update: {
             $set: {
-              ...data[subsessionId],
+              ...item,
             },
             $setOnInsert: {
-              _id: Number(subsessionId),
+              _id: Number(item.cust_id),
             },
           },
           upsert: true,
         }
       }));
-      await subsessionsCol.bulkWrite(bulkOps);
-      console.log("Subsessions Data Bulk Write Complete!")
+      await seasonsCol.bulkWrite(bulkOps);
+      console.log("User Data Bulk Write Complete!")
     } finally {
       await client.close();
     }
