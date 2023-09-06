@@ -9,7 +9,7 @@ with open('cookie.txt', 'r') as file:
     session.cookies.update(cookies)
 
 param_sets = []
-with open ('input.json', 'r') as input_file:
+with open ('9-5-2023-jake-standings-input.json', 'r') as input_file:
     json_data = json.load(input_file)
     for result in json_data:
         param_sets.append(result.split('_'))
@@ -35,8 +35,8 @@ for param_set in param_sets:
   if (my_rank > 0):
       file_name = standings_response_json['chunk_info']['chunk_file_names'][math.floor(page_number)]
       file_response = session.get(root_url + file_name)
-      file_reponse_json = file_response.json()
-      [me] = [driver for driver in file_reponse_json if driver['cust_id'] == 300752]
+      file_response_json = file_response.json()
+      [me] = [driver for driver in file_response_json if driver['cust_id'] == 300752]
       my_division = me['division']
       season_dict['division'] = my_division + 1
       season_dict['season_driver_data'] = me
