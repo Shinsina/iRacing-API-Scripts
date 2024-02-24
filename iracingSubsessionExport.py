@@ -8,10 +8,10 @@ with open('cookie.txt', 'r') as file:
     session.cookies.update(cookies)
 
 subsessions = []
-with open ('6-7-2023-jake-input.json', 'r') as input_file:
+with open ('2-23-2023-jake-search-seasons-output.json', 'r') as input_file:
     json_data = json.load(input_file)
-    for result in json_data['d']['r']:
-        subsessions.append(result['41'])
+    for result in json_data:
+        subsessions.append(result['subsession_id'])
 
 output = {}
 query_string = 'https://members-ng.iracing.com/data/results/get?subsession_id={}'
