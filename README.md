@@ -13,7 +13,7 @@ This will then create `cookie.txt` in the root of the project for the current au
 
 ## Gathering Subsession IDs
 
-Following authentication the first script to be run is `iracingSearchSeasonsExport.py` at time of writing this will require changing the query string on `query_string` for the respective `season_quarter`, `season_year` and `cust_id` parameters. This will create the input file for `iracingSubsesssionExport.py`
+Following authentication the first script to be run is `iracingSearchSeasonsExport.py` at time of writing this will require changing the query string on `query_string` for the respective `season_quarter`, `season_year` and `cust_id` parameters. This will create the input file for `iracingSubsessionExport.py`
 
 ## Gathering Subsession Data
 
@@ -26,6 +26,16 @@ Using the following query `await collection.distinct("series_id", {})` on [Stat 
 ## Gathering Standings Data
 
 Using the results of the query on [Stat 'n' Track](https://github.com/Shinsina/Stat-N-Track) within `pages/user/[id]/subsessions/index.astro` against the `subsessions` collection, create a Set of string values of the following shape `SEASON-ID_CAR-CLASS-ID` and save this result as a JSON file for each `cust_id` that needs to be processed and utilize the respective file for each `cust_id` in `iracingStandingsReqJake.py` or `iracingStandingsReqJack.py` respectively. (NOTE: All queries listed should be run following all subsessions being loaded into the `subsessions` collection)
+
+The outlined operation can be accomplished like so:
+
+```js
+Array.from(new Set(subsessions.map((subsession) => {
+  const { session_results, season_id } = subsession;
+  const user = session_results[2].results.find((v) => v.cust_id === Number(id));
+  return `${season_id}_${user.car_class_id}`;
+})));
+```
 
 ## Loading Other Data
 
