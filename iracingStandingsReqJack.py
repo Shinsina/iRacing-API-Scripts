@@ -8,7 +8,7 @@ with open('cookie.txt', 'r') as file:
     session.cookies.update(cookies)
 
 param_sets = []
-with open ('9-5-2023-jack-standings-input.json', 'r') as input_file:
+with open ('2-23-202-jack-standings-input.json', 'r') as input_file:
     json_data = json.load(input_file)
     for result in json_data:
         param_sets.append(result.split('_'))
@@ -16,7 +16,8 @@ with open ('9-5-2023-jack-standings-input.json', 'r') as input_file:
 query_string = 'https://members-ng.iracing.com/data/stats/season_driver_standings?season_id={}&car_class_id={}'
 division_query_string = 'https://members-ng.iracing.com/data/stats/season_driver_standings?season_id={}&car_class_id={}&division={}'
 output = []
-for param_set in param_sets:
+for index, param_set in enumerate(param_sets):
+  print(str(index + 1) + ' of ' + str(param_sets.__len__()))
   season_dict = {}
   [season_id, car_class_id] = param_set
   response = session.get(query_string.format(season_id, car_class_id))
