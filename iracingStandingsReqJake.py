@@ -9,7 +9,7 @@ with open('cookie.txt', 'r') as file:
     session.cookies.update(cookies)
 
 param_sets = []
-with open ('9-5-2023-jake-standings-input.json', 'r') as input_file:
+with open ('2-23-2024-jake-standings-input.json', 'r') as input_file:
     json_data = json.load(input_file)
     for result in json_data:
         param_sets.append(result.split('_'))
@@ -17,7 +17,8 @@ with open ('9-5-2023-jake-standings-input.json', 'r') as input_file:
 query_string = 'https://members-ng.iracing.com/data/stats/season_driver_standings?season_id={}&car_class_id={}'
 division_query_string = 'https://members-ng.iracing.com/data/stats/season_driver_standings?season_id={}&car_class_id={}&division={}'
 output = []
-for param_set in param_sets:
+for index, param_set in enumerate(param_sets):
+  print(str(index + 1) + ' of ' + str(param_sets.__len__()))
   season_dict = {}
   [season_id, car_class_id] = param_set
   response = session.get(query_string.format(season_id, car_class_id))
@@ -25,7 +26,8 @@ for param_set in param_sets:
   standings_response = session.get(response_json['link'])
   standings_response_json = standings_response.json()
   my_rank = standings_response_json['customer_rank']
-  page_number = my_rank / standings_response_json['chunk_info']['chunk_size']
+  calculated_page_number = my_rank / standings_response_json['chunk_info']['chunk_size']
+  page_number = calculated_page_number if (calculated_page_number % 1 != 0) else (calculated_page_number - 1)
   root_url = standings_response_json['chunk_info']['base_download_url']
   season_name = standings_response_json['season_name']
   season_dict['season_name'] = season_name
