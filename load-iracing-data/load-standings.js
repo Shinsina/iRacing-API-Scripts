@@ -1,5 +1,5 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const data = require("./standings-data.json");
+const data = require("./3-6-2024-jack-standings-output.json");
 require("dotenv").config()
 
 const uri = process.env.MONGODB_URI || null;

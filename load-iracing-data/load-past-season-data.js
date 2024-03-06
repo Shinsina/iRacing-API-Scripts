@@ -1,6 +1,6 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const data = require("./12-4-2023-past-season-series-output.json");
-const seasonIds = require("./12-4-2023-past-season-season-ids-input.json");
+const data = require("./3-6-2024-past-season-series-output.json");
+const seasonIds = require("./3-6-2024-past-season-season-ids-input.json");
 require("dotenv").config()
 
 const uri = process.env.MONGODB_URI || null;
