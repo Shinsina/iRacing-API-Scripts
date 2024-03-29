@@ -13,29 +13,19 @@ This will then create `cookie.txt` in the root of the project for the current au
 
 ## Gathering Subsession IDs
 
-Following authentication the first script to be run is `iracingSearchSeasonsExport.py` at time of writing this will require changing the query string on `query_string` for the respective `season_quarter`, `season_year` and `cust_id` parameters. This will create the input file for `iracingSubsessionExport.py`
+Following authentication the first script to be run is `iracingSearchSeriesExport.py` at time of writing this will require changing the query string on `query_string` for the respective `season_quarter`, `season_year` and `cust_id` parameters. This will create the input file for `iracingSubsessionExport.py`
 
 ## Gathering Subsession Data
 
-Following runs of `iracingSearchSeasonsExport.py` for all `season_quarter`, `season_year` and `cust_id` permutations next will be using the output file(s) and using them as the input file for `iracingSubsessionExport.py` the file output here will be used by `load-iracing-data/load-subsessions.js` to load subsession data into MongoDB.
+Following runs of `iracingSearchSeriesExport.py` for all `season_quarter`, `season_year` and `cust_id` permutations next will be using the output file(s) and using them as the input file for `iracingSubsessionExport.py` the file output here will be used by `load-iracing-data/load-subsessions.js` to load subsession data into MongoDB.
 
 ## Gathering Past Seasons Data
 
-Using the following query `await collection.distinct("series_id", {})` on [Stat 'n' Track](https://github.com/Shinsina/Stat-N-Track) within `pages/user/[id]/subsessions/index.astro` against the `subsessions` collection, this will return what should be saved as `past-season-series-ids-input.json` in the project root, then you can run `iracingPastSeasonsExport.py` which will output a file that is used by `loading-iracing-data/load-past-season-data.js` in conjunction with a respective `past-season-season-ids-input.json` (which is generated likewise to `past-season-series-ids-input.json` albeit using the following query `await collection.distinct("season_id", {})`) file to load past season data into MongoDB. (NOTE: All queries listed should be run following all subsessions being loaded into the `subsessions` collection)
+Following runs of `iracingSearchSeriesExport.py` for all `season_quarter`, `season_year` and `cust_id` permutations next will be using the output file(s) and using them as the input file for `iracingPastSeasonsExport.py` as each result in the files has the `series_id` for each series participated in, these entries will additionally have the `season_id` for each series which can be used as `seasonIds` within `load-iracing-data/load-past-season-data.js` (assuming they're mapped to an array and constructed as a unique set like so ```js new Set(series.map((series) => series.season_id))```)
 
 ## Gathering Standings Data
 
-Using the results of the query on [Stat 'n' Track](https://github.com/Shinsina/Stat-N-Track) within `pages/user/[id]/subsessions/index.astro` against the `subsessions` collection, create a Set of string values of the following shape `SEASON-ID_CAR-CLASS-ID` and save this result as a JSON file for each `cust_id` that needs to be processed and utilize the respective file for each `cust_id` in `iracingStandingsReqJake.py` or `iracingStandingsReqJack.py` respectively. (NOTE: All queries listed should be run following all subsessions being loaded into the `subsessions` collection)
-
-The outlined operation can be accomplished like so:
-
-```js
-Array.from(new Set(subsessions.map((subsession) => {
-  const { session_results, season_id } = subsession;
-  const user = session_results[2].results.find((v) => v.cust_id === Number(id));
-  return `${season_id}_${user.car_class_id}`;
-})));
-```
+Following runs of `iracingSearchSeriesExport.py` for all `season_quarter`, `season_year` and `cust_id` permutations next will be using the output file(s) and using them as the input file for `iracingStandingsReqJake.py` or `iracingStandingsReqJack.py` respectively. As each result in the files has the `season_id` and `car_class_id` for each series participated in. The file output here will be used by `load-iracing-data/load-standings.js` to load standings data into MongoDB. (NOTE: These will likely need to be filtered into unique set of string values of the format `SEASON-ID_CAR-CLASS-ID` and will need to be generated for each `cust_id` that needs to be processed).
 
 ## Loading Other Data
 
