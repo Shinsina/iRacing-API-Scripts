@@ -1,9 +1,10 @@
 import json
 
 subsessions = []
-with open('../3-29-2024-search-series-output.json', 'r') as input_file:
+with open('../search-series-output.json', 'r') as input_file:
   json_data = json.load(input_file)
-  subsessions.extend(json_data)
+  for key in json_data.keys():
+    subsessions.extend(json_data[key])
 
 series_ids = set()
 season_ids = set()
