@@ -21,7 +21,11 @@ Following runs of `iracingSearchSeriesExport.py` for all `season_quarter`, `seas
 
 ## Gathering Past Seasons Data
 
-Following runs of `iracingSearchSeriesExport.py` for all `season_quarter`, `season_year` and `cust_id` permutations next will be using the output file(s) and using them as the input file for `iracingPastSeasonsExport.py` as each result in the files has the `series_id` for each series participated in, these entries will additionally have the `season_id` for each series which can be used as `seasonIds` within `load-iracing-data/load-past-season-data.js` (assuming they're mapped to an array and constructed as a unique set like so ```js new Set(series.map((series) => series.season_id))```)
+Following runs of `iracingSearchSeriesExport.py` for all `season_quarter`, `season_year` and `cust_id` permutations next will be using the output file(s) and using them as the input file for `iracingPastSeasonsExport.py` as each result in the files has the `series_id` for each series participated in, these entries will additionally have the `season_id` for each series which can be used as `seasonIds` within `load-iracing-data/load-past-season-data.js` assuming they're mapped to an array and constructed as a unique set like so:
+
+```js
+  new Set(series.map((series) => series.season_id))
+```
 
 ## Gathering Standings Data
 
