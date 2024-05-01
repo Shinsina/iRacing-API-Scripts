@@ -8,7 +8,7 @@ with open('cookie.txt', 'r') as file:
     session.cookies.update(cookies)
 
 past_series = []
-with open ('past-season-series-ids-input.json', 'r') as input_file:
+with open ('distinct-series-ids-output.json', 'r') as input_file:
     json_data = json.load(input_file)
     past_series.extend(json_data)
 
