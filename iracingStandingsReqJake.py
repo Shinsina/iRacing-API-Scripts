@@ -9,7 +9,7 @@ with open('cookie.txt', 'r') as file:
     session.cookies.update(cookies)
 
 param_sets = []
-with open ('3-29-2024-standings-input.json', 'r') as input_file:
+with open ('5-1-2024-jake-standings-input.json', 'r') as input_file:
     json_data = json.load(input_file)
     for result in json_data:
         param_sets.append(result.split('_'))
