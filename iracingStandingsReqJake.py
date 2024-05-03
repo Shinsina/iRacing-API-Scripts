@@ -9,7 +9,7 @@ with open('cookie.txt', 'r') as file:
     session.cookies.update(cookies)
 
 param_sets = []
-with open ('2-23-2024-jake-standings-input.json', 'r') as input_file:
+with open ('5-1-2024-jake-standings-input.json', 'r') as input_file:
     json_data = json.load(input_file)
     for result in json_data:
         param_sets.append(result.split('_'))
@@ -50,5 +50,5 @@ for index, param_set in enumerate(param_sets):
         my_division_rank = division_standings_response_json['customer_rank']
         season_dict['division_rank'] = my_division_rank
       output.append(season_dict)
-with open('output.json', 'w') as output_file:
+with open('jake-standings-output.json', 'w') as output_file:
   json.dump(output, output_file)
