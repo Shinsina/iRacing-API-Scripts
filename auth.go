@@ -28,12 +28,12 @@ func main() {
 		fmt.Println(err)
 	}
 	auth_json := make(map[string]string)
-	test := auth_response.Cookies()
-	for i := 0; i < len(test); i++ {
-		_, exists := auth_json[test[i].Name]
+	cookies := auth_response.Cookies()
+	for i := 0; i < len(cookies); i++ {
+		_, exists := auth_json[cookies[i].Name]
 		if !exists {
-			new_value := test[i].Value
-			auth_json[test[i].Name] = new_value
+			new_value := cookies[i].Value
+			auth_json[cookies[i].Name] = new_value
 		}
 	}
 	cookie_as_bytes, err := json.Marshal(auth_json)
