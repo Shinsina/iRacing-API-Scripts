@@ -145,7 +145,7 @@ func main() {
 	for i := 0; i < len(customer_id_season_quarter_season_year_array_of_arrays); i++ {
 		value := customer_id_season_quarter_season_year_array_of_arrays[i][0]
 		customer_id := value.Customer_ID
-		file_name := strconv.Itoa(customer_id) + "-subsessions-output.json"
+		file_name := strconv.Itoa(customer_id) + "-search-series-output.json"
 		file, err := os.Create(file_name)
 		if err != nil {
 			fmt.Println(err)
