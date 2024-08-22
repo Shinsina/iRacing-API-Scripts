@@ -1,10 +1,10 @@
 import json
 
 subsessions = []
-with open('../5-1-2024-jake-search-series-output.json', 'r') as input_file:
+with open('./300752-subsessions-output.json', 'r') as input_file:
   json_data = json.load(input_file)
-  for key in json_data.keys():
-    subsessions.extend(json_data[key])
+  for value in json_data:
+    subsessions.extend(value)
 
 unique_season_car_class_id_mappings = set()
 for subsession in subsessions:
