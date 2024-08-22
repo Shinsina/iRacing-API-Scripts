@@ -104,12 +104,12 @@ func main() {
 	}
 	chunk_channel := make(chan ChunkResponseGrouping, channel_count)
 	for i := 0; i < channel_count; i++ {
-		channel_reponse := <-channel
-		customer_id := channel_reponse.customer_id
-		outer_index := channel_reponse.outer_index
-		base_url := channel_reponse.response.Data.Chunk_Info.Base_Download_Url
-		for i := 0; i < len(channel_reponse.response.Data.Chunk_Info.Chunk_File_Names); i++ {
-			url := base_url + channel_reponse.response.Data.Chunk_Info.Chunk_File_Names[i]
+		channel_response := <-channel
+		customer_id := channel_response.customer_id
+		outer_index := channel_response.outer_index
+		base_url := channel_response.response.Data.Chunk_Info.Base_Download_Url
+		for i := 0; i < len(channel_response.response.Data.Chunk_Info.Chunk_File_Names); i++ {
+			url := base_url + channel_response.response.Data.Chunk_Info.Chunk_File_Names[i]
 			go func() {
 				req, err := http.NewRequest("GET", url, nil)
 				if err != nil {
