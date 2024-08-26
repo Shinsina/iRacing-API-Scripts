@@ -95,6 +95,12 @@ type MinimalDivisionResponse struct {
 	Customer_Rank int `json:"customer_rank"`
 }
 
+type DivisionLinkChannelReponse struct {
+	overall_rank       int
+	season_driver_data DivisionDriver
+	link               string
+}
+
 func main() {
 
 	content, err := os.ReadFile("../cookie.txt")
@@ -236,12 +242,63 @@ func main() {
 		}()
 	}
 	var output []ChunkResponseGrouping
+	division_channel_count := 0
+	division_link_channel := make(chan DivisionLinkChannelReponse, channel_count)
 	for i := 0; i < channel_count; i++ {
 		chunk_channel_response := <-chunk_channel
-		division_rank := 0
 		if chunk_channel_response.Season_Driver_Data.Division > -1 {
 			url := fmt.Sprintf("https://members-ng.iracing.com/data/stats/season_driver_standings?season_id=%d&car_class_id=%d&division=%d", chunk_channel_response.Season_ID, chunk_channel_response.Car_Class_ID, chunk_channel_response.Season_Driver_Data.Division)
-			req, err := http.NewRequest("GET", url, nil)
+			division_channel_count += 1
+			go func() {
+				req, err := http.NewRequest("GET", url, nil)
+				if err != nil {
+					fmt.Println(err)
+				}
+				for key, value := range cookies {
+					req.AddCookie(&http.Cookie{Name: key, Value: value})
+				}
+				http_client := &http.Client{}
+				// @todo Determine if this can be shortened even further
+				sleep_time := 100 * i
+				time.Sleep(time.Duration(sleep_time) * time.Millisecond)
+				resp, err := http_client.Do(req)
+				if err != nil {
+					fmt.Println(err)
+				}
+				defer resp.Body.Close()
+				body, err := io.ReadAll(resp.Body)
+				if err != nil {
+					fmt.Println(err)
+				}
+				var minimal_initial_response MinimalInitialResponse
+				err = json.Unmarshal(body, &minimal_initial_response)
+				if err != nil {
+					fmt.Println(err)
+				}
+				var division_link_channel_output DivisionLinkChannelReponse
+				division_link_channel_output.overall_rank = chunk_channel_response.Overall_Rank
+				division_link_channel_output.season_driver_data = chunk_channel_response.Season_Driver_Data
+				division_link_channel_output.link = minimal_initial_response.Link
+				division_link_channel <- division_link_channel_output
+			}()
+		} else {
+			var value ChunkResponseGrouping
+			value.Season_Name = chunk_channel_response.Season_Name
+			value.Overall_Rank = chunk_channel_response.Overall_Rank
+			value.Season_ID = chunk_channel_response.Season_ID
+			value.Car_Class_ID = chunk_channel_response.Car_Class_ID
+			value.Division = chunk_channel_response.Division
+			value.Season_Driver_Data = chunk_channel_response.Season_Driver_Data
+			value.Division_Rank = 0
+			output = append(output, value)
+		}
+	}
+
+	division_channel := make(chan ChunkResponseGrouping, division_channel_count)
+	for i := 0; i < division_channel_count; i++ {
+		go func() {
+			division_link_channel_response := <-division_link_channel
+			req, err := http.NewRequest("GET", division_link_channel_response.link, nil)
 			if err != nil {
 				fmt.Println(err)
 			}
@@ -258,44 +315,34 @@ func main() {
 			if err != nil {
 				fmt.Println(err)
 			}
-			var minimal_initial_response MinimalInitialResponse
-			err = json.Unmarshal(body, &minimal_initial_response)
+			var iracing_api_response iRacingAPIResponse
+			err = json.Unmarshal(body, &iracing_api_response)
 			if err != nil {
 				fmt.Println(err)
 			}
-			req2, err2 := http.NewRequest("GET", minimal_initial_response.Link, nil)
-			if err2 != nil {
-				fmt.Println(err2)
-			}
-			for key, value := range cookies {
-				req2.AddCookie(&http.Cookie{Name: key, Value: value})
-			}
-			http_client2 := &http.Client{}
-			resp2, err3 := http_client2.Do(req2)
-			if err3 != nil {
-				fmt.Println(err3)
-			}
-			defer resp.Body.Close()
-			body2, err4 := io.ReadAll(resp2.Body)
-			if err4 != nil {
-				fmt.Println(err4)
-			}
-			var iracing_api_response MinimalDivisionResponse
-			err = json.Unmarshal(body2, &iracing_api_response)
-			if err != nil {
-				fmt.Println(err)
-			}
-			division_rank = iracing_api_response.Customer_Rank
-		}
-		fmt.Println(strconv.Itoa(i) + " of " + strconv.Itoa(len(standings_input)) + " chunks")
+			var division_channel_output ChunkResponseGrouping
+			division_channel_output.Division_Rank = iracing_api_response.Customer_Rank
+			division_channel_output.Season_Name = iracing_api_response.Season_Name
+			division_channel_output.Season_ID = iracing_api_response.Season_ID
+			division_channel_output.Overall_Rank = division_link_channel_response.overall_rank
+			division_channel_output.Car_Class_ID = iracing_api_response.Car_Class_ID
+			division_channel_output.Season_Driver_Data = division_link_channel_response.season_driver_data
+			division_channel_output.Division = division_link_channel_response.season_driver_data.Division
+			division_channel <- division_channel_output
+		}()
+	}
+
+	for i := 0; i < division_channel_count; i++ {
+		division_channel_response := <-division_channel
+		fmt.Println(strconv.Itoa(i) + " of " + strconv.Itoa(division_channel_count) + " chunks")
 		var value ChunkResponseGrouping
-		value.Season_Name = chunk_channel_response.Season_Name
-		value.Overall_Rank = chunk_channel_response.Overall_Rank
-		value.Season_ID = chunk_channel_response.Season_ID
-		value.Car_Class_ID = chunk_channel_response.Car_Class_ID
-		value.Division = chunk_channel_response.Division
-		value.Season_Driver_Data = chunk_channel_response.Season_Driver_Data
-		value.Division_Rank = division_rank
+		value.Season_Name = division_channel_response.Season_Name
+		value.Overall_Rank = division_channel_response.Overall_Rank
+		value.Season_ID = division_channel_response.Season_ID
+		value.Car_Class_ID = division_channel_response.Car_Class_ID
+		value.Division = division_channel_response.Division
+		value.Season_Driver_Data = division_channel_response.Season_Driver_Data
+		value.Division_Rank = division_channel_response.Division_Rank
 		output = append(output, value)
 	}
 
