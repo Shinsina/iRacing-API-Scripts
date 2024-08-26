@@ -193,7 +193,7 @@ func main() {
 		channel_response := <-link_channel
 		calculated_page_number := channel_response.Customer_Rank / channel_response.Chunk_Info.Chunk_Size
 		page_number := calculated_page_number
-		if (channel_response.Customer_Rank - channel_response.Chunk_Info.Chunk_Size) == 0 {
+		if (channel_response.Customer_Rank % channel_response.Chunk_Info.Chunk_Size) == 0 {
 			page_number = page_number - 1
 		}
 		base_url := channel_response.Chunk_Info.Base_Download_Url
