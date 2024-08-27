@@ -4,4 +4,4 @@ set -a
 source .env
 set +a
 
-python3 iracingAuth.py
+go run auth.go
