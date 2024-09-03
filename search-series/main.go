@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"time"
 )
 
 type CustomerIDSeasonQuarterSeasonYearMapping struct {
@@ -79,6 +80,9 @@ func main() {
 					req.AddCookie(&http.Cookie{Name: key, Value: value})
 				}
 				http_client := &http.Client{}
+				// @todo Determine if this can be shortened even further
+				sleep_time := 1000 * i
+				time.Sleep(time.Duration(sleep_time) * time.Millisecond)
 				resp, err := http_client.Do(req)
 				if err != nil {
 					fmt.Println(err)
@@ -91,7 +95,7 @@ func main() {
 				var iracing_api_response iRacingAPIResponse
 				err = json.Unmarshal(body, &iracing_api_response)
 				if err != nil {
-					fmt.Println(err)
+					fmt.Println(err, string(body))
 				}
 				var channel_output InitialResponseGrouping
 				channel_output.customer_id = mapping.Customer_ID
@@ -119,6 +123,9 @@ func main() {
 					req.AddCookie(&http.Cookie{Name: key, Value: value})
 				}
 				http_client := &http.Client{}
+				// @todo Determine if this can be shortened even further
+				sleep_time := 1000 * i
+				time.Sleep(time.Duration(sleep_time) * time.Millisecond)
 				resp, err := http_client.Do(req)
 				if err != nil {
 					fmt.Println(err)
