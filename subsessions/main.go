@@ -99,6 +99,9 @@ func main() {
 				req.AddCookie(&http.Cookie{Name: key, Value: value})
 			}
 			http_client := &http.Client{}
+			// @todo Determine if this can be shortened even further
+			sleep_time := 100 * i
+			time.Sleep(time.Duration(sleep_time) * time.Millisecond)
 			resp, err := http_client.Do(req)
 			if err != nil {
 				fmt.Println(10, err)
