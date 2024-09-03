@@ -266,6 +266,11 @@
       "season_quarter": 2,
       "season_year": 2024,
       "customer_id": 251134
+    },
+    {
+      "season_quarter": 3,
+      "season_year": 2024,
+      "customer_id": 251134
     }
   ],
   [
@@ -363,6 +368,11 @@
       "season_quarter": 2,
       "season_year": 2024,
       "customer_id": 300752
+    },
+    {
+      "season_quarter": 3,
+      "season_year": 2024,
+      "customer_id": 300752
     }
   ],
   [
@@ -589,6 +599,11 @@
     },
     {
       "season_quarter": 2,
+      "season_year": 2024,
+      "customer_id": 815162
+    },
+    {
+      "season_quarter": 3,
       "season_year": 2024,
       "customer_id": 815162
     }
