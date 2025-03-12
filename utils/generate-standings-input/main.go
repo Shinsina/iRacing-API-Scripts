@@ -21,8 +21,8 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	value := strings.Split(input_file_path, "~")
-	cust_id := value[1]
+	value := strings.Split(input_file_path, "-")
+	cust_id := value[0]
 	var minimal_subsessions [][]MinimalSubsession
 	err = json.Unmarshal(raw_subsessions_output, &minimal_subsessions)
 	if err != nil {
