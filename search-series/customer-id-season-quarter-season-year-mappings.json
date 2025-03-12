@@ -109,6 +109,11 @@
       "season_quarter": 3,
       "season_year": 2024,
       "customer_id": 182407
+    },
+    {
+      "season_quarter": 4,
+      "season_year": 2024,
+      "customer_id": 182407
     }
   ],
   [
@@ -256,6 +261,11 @@
       "season_quarter": 3,
       "season_year": 2024,
       "customer_id": 188056
+    },
+    {
+      "season_quarter": 4,
+      "season_year": 2024,
+      "customer_id": 188056
     }
   ],
   [
@@ -418,6 +428,11 @@
       "season_quarter": 3,
       "season_year": 2024,
       "customer_id": 251134
+    },
+    {
+      "season_quarter": 4,
+      "season_year": 2024,
+      "customer_id": 251134
     }
   ],
   [
@@ -520,6 +535,11 @@
       "season_quarter": 3,
       "season_year": 2024,
       "customer_id": 300752
+    },
+    {
+      "season_quarter": 4,
+      "season_year": 2024,
+      "customer_id": 300752
     }
   ],
   [
@@ -597,6 +617,11 @@
       "season_quarter": 3,
       "season_year": 2024,
       "customer_id": 589449
+    },
+    {
+      "season_quarter": 4,
+      "season_year": 2024,
+      "customer_id": 589449
     }
   ],
   [
@@ -649,6 +674,11 @@
       "season_quarter": 3,
       "season_year": 2024,
       "customer_id": 714312
+    },
+    {
+      "season_quarter": 4,
+      "season_year": 2024,
+      "customer_id": 714312
     }
   ],
   [
@@ -706,6 +736,11 @@
       "season_quarter": 3,
       "season_year": 2024,
       "customer_id": 746377
+    },
+    {
+      "season_quarter": 4,
+      "season_year": 2024,
+      "customer_id": 746377
     }
   ],
   [
@@ -751,6 +786,11 @@
     },
     {
       "season_quarter": 3,
+      "season_year": 2024,
+      "customer_id": 815162
+    },
+    {
+      "season_quarter": 4,
       "season_year": 2024,
       "customer_id": 815162
     }
