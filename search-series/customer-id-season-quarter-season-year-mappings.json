@@ -1,1017 +1,219 @@
 [
-  [
-    {
-      "season_quarter": 2,
-      "season_year": 2015,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2015,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2018,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2019,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2020,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2020,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2020,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2021,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2021,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2021,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2021,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2022,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2022,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2022,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2022,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2023,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2023,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2023,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2023,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2024,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2024,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2024,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2024,
-      "customer_id": 182407
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2025,
-      "customer_id": 182407
-    }
-  ],
-  [
-    {
-      "season_quarter": 2,
-      "season_year": 2015,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2015,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2015,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2016,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2016,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2015,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2016,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2016,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2017,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2017,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2017,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2015,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2017,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2018,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2018,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2018,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2020,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2020,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2020,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2020,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2021,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2021,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2021,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2022,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2022,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2022,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2022,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2024,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2024,
-      "customer_id": 188056
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2024,
-      "customer_id": 188056
-    }
-  ],
-  [
-    {
-      "season_quarter": 4,
-      "season_year": 2016,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2017,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2017,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2017,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2017,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2018,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2018,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2018,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2018,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2019,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2019,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2019,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2019,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2020,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2020,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2020,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2020,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2021,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2021,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2021,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2021,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2022,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2022,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2022,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2022,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2023,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2023,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2023,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2023,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2024,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2024,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2024,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2024,
-      "customer_id": 251134
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2025,
-      "customer_id": 251134
-    }
-  ],
-  [
-    {
-      "season_quarter": 4,
-      "season_year": 2017,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2018,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2018,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2019,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2019,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2019,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2020,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2020,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2020,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2022,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2022,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2022,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2022,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2023,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2023,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2023,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2023,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2024,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2024,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2024,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2024,
-      "customer_id": 300752
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2025,
-      "customer_id": 300752
-    }
-  ],
-  [
-    {
-      "season_quarter": 1,
-      "season_year": 2021,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2021,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2021,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2021,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2022,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2022,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2022,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2022,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2023,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2023,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2023,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2023,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2024,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2024,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2024,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2024,
-      "customer_id": 589449
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2025,
-      "customer_id": 589449
-    }
-  ],
-  [
-    {
-      "season_quarter": 1,
-      "season_year": 2022,
-      "customer_id": 714312
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2022,
-      "customer_id": 714312
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2022,
-      "customer_id": 714312
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2023,
-      "customer_id": 714312
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2023,
-      "customer_id": 714312
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2023,
-      "customer_id": 714312
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2023,
-      "customer_id": 714312
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2024,
-      "customer_id": 714312
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2024,
-      "customer_id": 714312
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2024,
-      "customer_id": 714312
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2024,
-      "customer_id": 714312
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2025,
-      "customer_id": 714312
-    }
-  ],
-  [
-    {
-      "season_quarter": 1,
-      "season_year": 2022,
-      "customer_id": 746377
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2022,
-      "customer_id": 746377
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2022,
-      "customer_id": 746377
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2022,
-      "customer_id": 746377
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2023,
-      "customer_id": 746377
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2023,
-      "customer_id": 746377
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2023,
-      "customer_id": 746377
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2023,
-      "customer_id": 746377
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2024,
-      "customer_id": 746377
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2024,
-      "customer_id": 746377
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2024,
-      "customer_id": 746377
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2024,
-      "customer_id": 746377
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2025,
-      "customer_id": 746377
-    }
-  ],
-  [
-    {
-      "season_quarter": 3,
-      "season_year": 2022,
-      "customer_id": 815162
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2022,
-      "customer_id": 815162
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2023,
-      "customer_id": 815162
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2023,
-      "customer_id": 815162
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2023,
-      "customer_id": 815162
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2023,
-      "customer_id": 815162
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2024,
-      "customer_id": 815162
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2024,
-      "customer_id": 815162
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2024,
-      "customer_id": 815162
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2024,
-      "customer_id": 815162
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2025,
-      "customer_id": 815162
-    }
-  ],
-  [
-    {
-      "season_quarter": 3,
-      "season_year": 2018,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2018,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2019,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2019,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2019,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2019,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2020,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2020,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2020,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2020,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2021,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2021,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2021,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2021,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2022,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2022,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2022,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2022,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2023,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2023,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2023,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2023,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2024,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2024,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2024,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2024,
-      "customer_id": 331322
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2025,
-      "customer_id": 331322
-    }
-  ],
-  [
-    {
-      "season_quarter": 1,
-      "season_year": 2023,
-      "customer_id": 908575
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2023,
-      "customer_id": 908575
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2023,
-      "customer_id": 908575
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2023,
-      "customer_id": 908575
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2024,
-      "customer_id": 908575
-    },
-    {
-      "season_quarter": 2,
-      "season_year": 2024,
-      "customer_id": 908575
-    },
-    {
-      "season_quarter": 3,
-      "season_year": 2024,
-      "customer_id": 908575
-    },
-    {
-      "season_quarter": 4,
-      "season_year": 2024,
-      "customer_id": 908575
-    },
-    {
-      "season_quarter": 1,
-      "season_year": 2025,
-      "customer_id": 908575
-    }
-  ]
+"2_2015_182407",
+"3_2015_182407",
+"2_2015_188056",
+"3_2015_188056",
+"4_2015_188056",
+"2_2015_188056",
+"2_2015_188056",
+"1_2016_188056",
+"2_2016_188056",
+"3_2016_188056",
+"4_2016_188056",
+"4_2016_251134",
+"1_2017_188056",
+"2_2017_188056",
+"3_2017_188056",
+"4_2017_188056",
+"1_2017_251134",
+"2_2017_251134",
+"3_2017_251134",
+"4_2017_251134",
+"4_2017_300752",
+"4_2018_182407",
+"1_2018_188056",
+"2_2018_188056",
+"3_2018_188056",
+"1_2018_251134",
+"2_2018_251134",
+"3_2018_251134",
+"4_2018_251134",
+"1_2018_300752",
+"4_2018_300752",
+"3_2018_331322",
+"4_2018_331322",
+"3_2019_182407",
+"1_2019_251134",
+"2_2019_251134",
+"3_2019_251134",
+"4_2019_251134",
+"1_2019_300752",
+"2_2019_300752",
+"3_2019_300752",
+"1_2019_331322",
+"2_2019_331322",
+"3_2019_331322",
+"4_2019_331322",
+"2_2020_182407",
+"3_2020_182407",
+"4_2020_182407",
+"1_2020_188056",
+"2_2020_188056",
+"3_2020_188056",
+"4_2020_188056",
+"1_2020_251134",
+"2_2020_251134",
+"3_2020_251134",
+"4_2020_251134",
+"1_2020_300752",
+"2_2020_300752",
+"3_2020_300752",
+"1_2020_331322",
+"2_2020_331322",
+"3_2020_331322",
+"4_2020_331322",
+"1_2021_182407",
+"2_2021_182407",
+"3_2021_182407",
+"4_2021_182407",
+"1_2021_188056",
+"2_2021_188056",
+"4_2021_188056",
+"1_2021_251134",
+"2_2021_251134",
+"3_2021_251134",
+"4_2021_251134",
+"1_2021_589449",
+"2_2021_589449",
+"3_2021_589449",
+"4_2021_589449",
+"1_2021_331322",
+"2_2021_331322",
+"3_2021_331322",
+"4_2021_331322",
+"1_2022_182407",
+"2_2022_182407",
+"3_2022_182407",
+"4_2022_182407",
+"1_2022_188056",
+"2_2022_188056",
+"3_2022_188056",
+"4_2022_188056",
+"1_2022_251134",
+"2_2022_251134",
+"3_2022_251134",
+"4_2022_251134",
+"1_2022_300752",
+"2_2022_300752",
+"3_2022_300752",
+"4_2022_300752",
+"1_2022_589449",
+"2_2022_589449",
+"3_2022_589449",
+"4_2022_589449",
+"1_2022_714312",
+"2_2022_714312",
+"4_2022_714312",
+"1_2022_746377",
+"2_2022_746377",
+"3_2022_746377",
+"4_2022_746377",
+"3_2022_815162",
+"4_2022_815162",
+"1_2022_331322",
+"2_2022_331322",
+"3_2022_331322",
+"4_2022_331322",
+"1_2023_182407",
+"2_2023_182407",
+"3_2023_182407",
+"4_2023_182407",
+"1_2023_251134",
+"2_2023_251134",
+"3_2023_251134",
+"4_2023_251134",
+"1_2023_300752",
+"2_2023_300752",
+"3_2023_300752",
+"4_2023_300752",
+"1_2023_589449",
+"2_2023_589449",
+"3_2023_589449",
+"4_2023_589449",
+"1_2023_714312",
+"2_2023_714312",
+"3_2023_714312",
+"4_2023_714312",
+"1_2023_746377",
+"2_2023_746377",
+"3_2023_746377",
+"4_2023_746377",
+"1_2023_815162",
+"2_2023_815162",
+"3_2023_815162",
+"4_2023_815162",
+"1_2023_331322",
+"2_2023_331322",
+"3_2023_331322",
+"4_2023_331322",
+"1_2023_908575",
+"2_2023_908575",
+"3_2023_908575",
+"4_2023_908575",
+"1_2024_182407",
+"2_2024_182407",
+"3_2024_182407",
+"4_2024_182407",
+"2_2024_188056",
+"3_2024_188056",
+"4_2024_188056",
+"1_2024_251134",
+"2_2024_251134",
+"3_2024_251134",
+"4_2024_251134",
+"1_2024_300752",
+"2_2024_300752",
+"3_2024_300752",
+"4_2024_300752",
+"1_2024_589449",
+"2_2024_589449",
+"3_2024_589449",
+"4_2024_589449",
+"1_2024_714312",
+"2_2024_714312",
+"3_2024_714312",
+"4_2024_714312",
+"1_2024_746377",
+"2_2024_746377",
+"3_2024_746377",
+"4_2024_746377",
+"1_2024_815162",
+"2_2024_815162",
+"3_2024_815162",
+"4_2024_815162",
+"1_2024_331322",
+"2_2024_331322",
+"3_2024_331322",
+"4_2024_331322",
+"1_2024_908575",
+"2_2024_908575",
+"3_2024_908575",
+"4_2024_908575",
+"1_2025_182407",
+"1_2025_251134",
+"1_2025_300752",
+"1_2025_589449",
+"1_2025_714312",
+"1_2025_746377",
+"1_2025_815162",
+"1_2025_331322",
+"1_2025_908575",
+"2_2025_182407",
+"2_2025_251134",
+"2_2025_300752",
+"2_2025_589449",
+"2_2025_714312",
+"2_2025_746377",
+"2_2025_815162",
+"2_2025_331322",
+"2_2025_908575",
+"3_2025_182407",
+"3_2025_251134",
+"3_2025_300752",
+"3_2025_589449",
+"3_2025_714312",
+"3_2025_746377",
+"3_2025_815162",
+"3_2025_331322",
+"3_2025_908575"
 ]
