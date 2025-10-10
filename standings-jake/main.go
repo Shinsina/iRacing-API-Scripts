@@ -12,6 +12,15 @@ import (
 	"time"
 )
 
+type TokenReponse struct {
+	Access_Token             string `json:"access_token"`
+	Token_Type               string `json:"token_type"`
+	Expires_In               int    `json:"expires_in"`
+	Refresh_Token            string `json:"refresh_token"`
+	Refresh_Token_Expires_In int    `json:"refresh_token_expires_in"`
+	Scope                    string `json:"scope"`
+}
+
 type MinimalInitialResponse struct {
 	Link string `json:"link"`
 }
@@ -95,7 +104,7 @@ type MinimalDivisionResponse struct {
 	Customer_Rank int `json:"customer_rank"`
 }
 
-type DivisionLinkChannelReponse struct {
+type DivisionLinkChannelResponse struct {
 	overall_rank       int
 	season_driver_data DivisionDriver
 	link               string
@@ -103,12 +112,12 @@ type DivisionLinkChannelReponse struct {
 
 func main() {
 
-	content, err := os.ReadFile("../cookie.txt")
+	content, err := os.ReadFile("../token.json")
 	if err != nil {
 		fmt.Println(err)
 	}
-	var cookies map[string]string
-	err = json.Unmarshal(content, &cookies)
+	var token_response TokenReponse
+	err = json.Unmarshal(content, &token_response)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -141,9 +150,7 @@ func main() {
 			if err != nil {
 				fmt.Println(err)
 			}
-			for key, value := range cookies {
-				req.AddCookie(&http.Cookie{Name: key, Value: value})
-			}
+			req.Header.Add("Authorization", token_response.Token_Type+" "+token_response.Access_Token)
 			http_client := &http.Client{}
 			// @todo Determine if this can be shortened even further
 			sleep_time := 100 * i
@@ -173,9 +180,8 @@ func main() {
 			if err != nil {
 				fmt.Println(err)
 			}
-			for key, value := range cookies {
-				req.AddCookie(&http.Cookie{Name: key, Value: value})
-			}
+			// Leaving this here in the event Signature and X-Amz-Algorithm are not query parameters at some point in time
+			// req.Header.Add("Authorization", token_response.Token_Type+" "+token_response.Access_Token)
 			http_client := &http.Client{}
 			resp, err := http_client.Do(req)
 			if err != nil {
@@ -211,9 +217,8 @@ func main() {
 			if err != nil {
 				fmt.Println(err)
 			}
-			for key, value := range cookies {
-				req.AddCookie(&http.Cookie{Name: key, Value: value})
-			}
+			// Leaving this here in the event Signature and X-Amz-Algorithm are not query parameters at some point in time
+			// req.Header.Add("Authorization", token_response.Token_Type+" "+token_response.Access_Token)
 			http_client := &http.Client{}
 			resp, err := http_client.Do(req)
 			if err != nil {
@@ -243,7 +248,7 @@ func main() {
 	}
 	var output []ChunkResponseGrouping
 	division_channel_count := 0
-	division_link_channel := make(chan DivisionLinkChannelReponse, channel_count)
+	division_link_channel := make(chan DivisionLinkChannelResponse, channel_count)
 	for i := 0; i < channel_count; i++ {
 		chunk_channel_response := <-chunk_channel
 		if chunk_channel_response.Season_Driver_Data.Division > -1 {
@@ -254,9 +259,7 @@ func main() {
 				if err != nil {
 					fmt.Println(err)
 				}
-				for key, value := range cookies {
-					req.AddCookie(&http.Cookie{Name: key, Value: value})
-				}
+				req.Header.Add("Authorization", token_response.Token_Type+" "+token_response.Access_Token)
 				http_client := &http.Client{}
 				// @todo Determine if this can be shortened even further
 				sleep_time := 100 * i
@@ -275,7 +278,7 @@ func main() {
 				if err != nil {
 					fmt.Println(err)
 				}
-				var division_link_channel_output DivisionLinkChannelReponse
+				var division_link_channel_output DivisionLinkChannelResponse
 				division_link_channel_output.overall_rank = chunk_channel_response.Overall_Rank
 				division_link_channel_output.season_driver_data = chunk_channel_response.Season_Driver_Data
 				division_link_channel_output.link = minimal_initial_response.Link
@@ -298,18 +301,19 @@ func main() {
 	for i := 0; i < division_channel_count; i++ {
 		go func() {
 			division_link_channel_response := <-division_link_channel
+			// @todo Determiine if link being an empty string is expected behavior
 			req, err := http.NewRequest("GET", division_link_channel_response.link, nil)
 			if err != nil {
 				fmt.Println(err)
 			}
-			for key, value := range cookies {
-				req.AddCookie(&http.Cookie{Name: key, Value: value})
-			}
+			// Leaving this here in the event Signature and X-Amz-Algorithm are not query parameters at some point in time
+			// req.Header.Add("Authorization", token_response.Token_Type+" "+token_response.Access_Token)
 			http_client := &http.Client{}
 			resp, err := http_client.Do(req)
 			if err != nil {
 				fmt.Println(err)
 			}
+			// fmt.Printf("%+v\n", division_link_channel_response)
 			defer resp.Body.Close()
 			body, err := io.ReadAll(resp.Body)
 			if err != nil {

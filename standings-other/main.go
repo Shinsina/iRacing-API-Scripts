@@ -14,6 +14,15 @@ import (
 	"time"
 )
 
+type TokenReponse struct {
+	Access_Token             string `json:"access_token"`
+	Token_Type               string `json:"token_type"`
+	Expires_In               int    `json:"expires_in"`
+	Refresh_Token            string `json:"refresh_token"`
+	Refresh_Token_Expires_In int    `json:"refresh_token_expires_in"`
+	Scope                    string `json:"scope"`
+}
+
 type MinimalInitialResponse struct {
 	Link string `json:"link"`
 }
@@ -122,12 +131,12 @@ type DivisionCSVChannelResponse struct {
 
 func main() {
 
-	content, err := os.ReadFile("../cookie.txt")
+	content, err := os.ReadFile("../token.json")
 	if err != nil {
 		fmt.Println(err)
 	}
-	var cookies map[string]string
-	err = json.Unmarshal(content, &cookies)
+	var token_response TokenReponse
+	err = json.Unmarshal(content, &token_response)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -165,9 +174,7 @@ func main() {
 			if err != nil {
 				fmt.Println(err)
 			}
-			for key, value := range cookies {
-				req.AddCookie(&http.Cookie{Name: key, Value: value})
-			}
+			req.Header.Add("Authorization", token_response.Token_Type+" "+token_response.Access_Token)
 			http_client := &http.Client{}
 			// @todo Determine if this can be shortened even further
 			sleep_time := 100 * i
@@ -197,9 +204,8 @@ func main() {
 			if err != nil {
 				fmt.Println(err)
 			}
-			for key, value := range cookies {
-				req.AddCookie(&http.Cookie{Name: key, Value: value})
-			}
+			// Leaving this here in the event Signature and X-Amz-Algorithm are not query parameters at some point in time
+			// req.Header.Add("Authorization", token_response.Token_Type+" "+token_response.Access_Token)
 			http_client := &http.Client{}
 			resp, err := http_client.Do(req)
 			if err != nil {
@@ -228,9 +234,8 @@ func main() {
 			if err != nil {
 				fmt.Println(err)
 			}
-			for key, value := range cookies {
-				req.AddCookie(&http.Cookie{Name: key, Value: value})
-			}
+			// Leaving this here in the event Signature and X-Amz-Algorithm are not query parameters at some point in time
+			// req.Header.Add("Authorization", token_response.Token_Type+" "+token_response.Access_Token)
 			http_client := &http.Client{}
 			resp, err := http_client.Do(req)
 			if err != nil {
@@ -277,9 +282,8 @@ func main() {
 			if err != nil {
 				fmt.Println(err)
 			}
-			for key, value := range cookies {
-				req.AddCookie(&http.Cookie{Name: key, Value: value})
-			}
+			// Leaving this here in the event Signature and X-Amz-Algorithm are not query parameters at some point in time
+			// req.Header.Add("Authorization", token_response.Token_Type+" "+token_response.Access_Token)
 			http_client := &http.Client{}
 			resp, err := http_client.Do(req)
 			if err != nil {
@@ -327,9 +331,7 @@ func main() {
 				if err != nil {
 					fmt.Println(err)
 				}
-				for key, value := range cookies {
-					req.AddCookie(&http.Cookie{Name: key, Value: value})
-				}
+				req.Header.Add("Authorization", token_response.Token_Type+" "+token_response.Access_Token)
 				http_client := &http.Client{}
 				// @todo Determine if this can be shortened even further
 				sleep_time := 100 * i
@@ -374,9 +376,8 @@ func main() {
 			if err != nil {
 				fmt.Println(err)
 			}
-			for key, value := range cookies {
-				req.AddCookie(&http.Cookie{Name: key, Value: value})
-			}
+			// Leaving this here in the event Signature and X-Amz-Algorithm are not query parameters at some point in time
+			// req.Header.Add("Authorization", token_response.Token_Type+" "+token_response.Access_Token)
 			http_client := &http.Client{}
 			resp, err := http_client.Do(req)
 			if err != nil {
@@ -408,9 +409,8 @@ func main() {
 		if err != nil {
 			fmt.Println(err)
 		}
-		for key, value := range cookies {
-			req.AddCookie(&http.Cookie{Name: key, Value: value})
-		}
+		// Leaving this here in the event Signature and X-Amz-Algorithm are not query parameters at some point in time
+		// req.Header.Add("Authorization", token_response.Token_Type+" "+token_response.Access_Token)
 		http_client := &http.Client{}
 		resp, err := http_client.Do(req)
 		if err != nil {
