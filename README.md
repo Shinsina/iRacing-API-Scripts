@@ -21,7 +21,7 @@ Following authentication the first script to be run is `/search-series/main.go` 
 
 ## Gathering Subsession Data
 
-Following runs of `/search-series/main.go`  for all `season_quarter`, `season_year` and `cust_id` permutations next we will be using the output file(s) and using them as the input file for `/subsession/main.go`, the file output here will be used [within this folder](https://github.com/Shinsina/Stat-N-Track/tree/master/Stat-N-Track) and should ultimately be a 1 dimensional array of Subsessions and saved as `1-subsessions-output.json` in the aforementioned folder
+Following runs of `/search-series/main.go`  for all `season_quarter`, `season_year` and `cust_id` permutations next we will be using the output file(s) and using them as the input file for `/subsession/main.go`, the file output here will be used [within this folder](https://github.com/Shinsina/Stat-N-Track/tree/master/Stat-N-Track) and should ultimately be a 1 dimensional array of Subsessions and saved as `1-subsessions-output.json` in the aforementioned folder which means you will need to merge the outputs together likely through copy pasting and making sure the array is 1 dimensional.
 
 ## Gathering Past Seasons Data
 
@@ -29,7 +29,7 @@ Following runs of `/search-series/main.go` for all `season_quarter`, `season_yea
 
 ## Gathering Standings Data
 
-Following runs of `/search-series/main.go` for all `season_quarter`, `season_year` and `cust_id` permutations next will be using the output file(s) and using them as the input file for `/standings-jake/main.go` (for the iRacing account that the `client_id` and `client_secret` were generated) or `/standings-other/main.go` (for any other driver whose data is being exported) respectively. As each result in the files has the `season_id` and `car_class_id` for each series participated in. The file output here will be used [within this folder](https://github.com/Shinsina/Stat-N-Track/tree/master/Stat-N-Track) and should ultimately be a 1 dimensional array of Subsessions and saved as `standings-output.json` in the aforementioned folder
+Following runs of `/search-series/main.go` for all `season_quarter`, `season_year` and `cust_id` permutations next will be using the output file(s) and using them to generate input file for `/standings-jake/main.go` (for the iRacing account that the `client_id` and `client_secret` were generated) or `/standings-other/main.go` (for any other driver whose data is being exported) respectively. To do this place the respective `CUST_ID_GOES_HERE-search-series-output.json` file in the `generate-standings-input` folder, then run the respective `main.go` script this will then create `~CUST_ID_GOES_HERE~standings-input.json` (which will need to be renamed to just `standings-input.json` for use within `standings-jake/main.go`), then you can run the respective standings script, the file output from these will be used [within this folder](https://github.com/Shinsina/Stat-N-Track/tree/master/Stat-N-Track) and should ultimately be a 1 dimensional array of Subsessions and saved as `standings-output.json` in the aforementioned folder which means you will need to merge the outputs together likely through copy pasting and making sure the array is 1 dimensional.
 
 ## Loading Car Class Data
 
