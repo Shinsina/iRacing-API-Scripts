@@ -11,6 +11,15 @@ import (
 	"time"
 )
 
+type TokenReponse struct {
+	Access_Token             string `json:"access_token"`
+	Token_Type               string `json:"token_type"`
+	Expires_In               int    `json:"expires_in"`
+	Refresh_Token            string `json:"refresh_token"`
+	Refresh_Token_Expires_In int    `json:"refresh_token_expires_in"`
+	Scope                    string `json:"scope"`
+}
+
 type MinimalSubsession struct {
 	Subsession_ID int `json:"subsession_id"`
 }
@@ -20,12 +29,12 @@ type MinimalInitialResponse struct {
 }
 
 func main() {
-	content, err := os.ReadFile("../cookie.txt")
+	content, err := os.ReadFile("../token.json")
 	if err != nil {
 		fmt.Println(1, err)
 	}
-	var cookies map[string]string
-	err = json.Unmarshal(content, &cookies)
+	var token_response TokenReponse
+	err = json.Unmarshal(content, &token_response)
 	if err != nil {
 		fmt.Println(2, err)
 	}
@@ -50,6 +59,12 @@ func main() {
 		}
 	}
 	slices.Sort(flattened_subsessions_ids)
+	// Highly suggested to process this in batches of 1000, if this value exceeds 1000 some requests may time out
+	// To do this for the first 1000 do this
+	// unique_subession_ids := slices.Compact(flattened_subsessions_ids)[:1000]
+	// For the next subsequent 1000 do this
+	// unique_subession_ids := slices.Compact(flattened_subsessions_ids)[1000:]
+	// Adjust 1000 to 2000, 3000, etc. for each subsequent batch
 	unique_subession_ids := slices.Compact(flattened_subsessions_ids)
 	channel := make(chan string, len(unique_subession_ids))
 	for i := 0; i < len(unique_subession_ids); i++ {
@@ -60,9 +75,7 @@ func main() {
 			if err != nil {
 				fmt.Println(5, err)
 			}
-			for key, value := range cookies {
-				req.AddCookie(&http.Cookie{Name: key, Value: value})
-			}
+			req.Header.Add("Authorization", token_response.Token_Type+" "+token_response.Access_Token)
 			http_client := &http.Client{}
 			// @todo Determine if this can be shortened even further
 			sleep_time := 100 * i
@@ -95,9 +108,8 @@ func main() {
 			if err != nil {
 				fmt.Println(9, err)
 			}
-			for key, value := range cookies {
-				req.AddCookie(&http.Cookie{Name: key, Value: value})
-			}
+			// Leaving this here in the event Signature and X-Amz-Algorithm are not query parameters at some point in time
+			// req.Header.Add("Authorization", token_response.Token_Type+" "+token_response.Access_Token)
 			http_client := &http.Client{}
 			// @todo Determine if this can be shortened even further
 			sleep_time := 100 * i
