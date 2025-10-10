@@ -33,7 +33,7 @@ Following runs of `/search-series/main.go` for all `season_quarter`, `season_yea
 
 ## Loading Car Class Data
 
-Use the response from [this location](https://members-ng.iracing.com/data/carclass/get) (`/data/carclass/get`).
+Use the response from [this location](https://members-ng.iracing.com/data/carclass/get) (`/data/carclass/get`). Place it as `car-classes.json` [within this folder](https://github.com/Shinsina/Stat-N-Track/tree/master/Stat-N-Track).
 
 This can be accessed easiest by logging into the iRacing /data API [via this link](https://members-login.iracing.com/?ref=https%3A%2F%2Fmembers-ng.iracing.com%2Fdata%2Fdoc&signout=true) and then using the link provided above.
 
