@@ -1,6 +1,4 @@
 token.json
 *-input.json
 *-output.json
-*.txt
 .env
-node_modules
