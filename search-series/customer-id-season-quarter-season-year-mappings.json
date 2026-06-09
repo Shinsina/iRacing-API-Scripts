@@ -129,6 +129,11 @@
       "season_quarter": 1,
       "season_year": 2026,
       "customer_id": 300752
+    },
+    {
+      "season_quarter": 2,
+      "season_year": 2026,
+      "customer_id": 300752
     }
   ],
   [
@@ -204,6 +209,11 @@
     },
     {
       "season_quarter": 1,
+      "season_year": 2026,
+      "customer_id": 815162
+    },
+    {
+      "season_quarter": 2,
       "season_year": 2026,
       "customer_id": 815162
     }
